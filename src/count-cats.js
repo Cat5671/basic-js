@@ -15,8 +15,8 @@ const { NotImplementedError } = require('../lib');
  *
  */
 function countCats(/* matrix */) {
-  // Remove line below and write your code here
-  throw new NotImplementedError('Not implemented');
+  let flatten = [].concat.apply([], matrix).join(',');
+  return ((flatten || '').match(/(?<! )\^\^(?! )/gm) || []).length;
 }
 
 module.exports = {
